@@ -152,7 +152,13 @@
     目前Java中还没有支持此种IO模型。
 
 17.Files的常用方法
-<<<<<<< HEAD:src/main/resources/基础
+    方法名       返回类型    说明
+    getName()    String      获取文件名称
+    canReade()   boolean     判断file是否可读
+    canWrite()   boolean     判断file是否可写
+    exists()     boolean     判断file是否存在
+    length()     Long        获取file长度
+    getAbsolutePath() String 获取file的绝对路径
 
 18、String和StringBuffer
 
@@ -178,12 +184,6 @@
    值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量.
    引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。
    一般认为,java内的传递都是值传递. java中实例对象的传递是引用传递 。
-=======
-    方法名       返回类型    说明
-    getName()    String      获取文件名称
-    canReade()   boolean     判断file是否可读
-    canWrite()   boolean     判断file是否可写
-    exists()     boolean     判断file是否存在
-    length()     Long        获取file长度
-    getAbsolutePath() String 获取file的绝对路径
->>>>>>> 7c2ea3d15cbbc03932473545f9e3866c5455647a:src/main/resources/data01
+
+
+
