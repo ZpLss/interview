@@ -1,0 +1,37 @@
+1、ArrayList和LinkedList的区别?
+
+    最明显的区别是 ArrrayList底层的数据结构是数组，支持随机访问，而 LinkedList 的底层数据结构是双向循环链表，不支持随机访问。
+    使用下标访问一个元素，ArrayList 的时间复杂度是 O(1)，而 LinkedList 是 O(n)。
+
+2、ArrayList和Array有什么区别?
+
+    Array可以容纳基本类型和对象，而ArrayList只能容纳对象。
+    Array是指定大小的，而ArrayList大小是固定的
+
+    Array没有提供ArrayList那么多功能，比如addAll、removeAll和iterator等。尽管ArrayList明显是更好的选择，但也有些时候
+    Array比较好用。
+    （1）如果列表的大小已经指定，大部分情况下是存储和遍历它们。
+    （2）对于遍历基本数据类型，尽管Collections使用自动装箱来减轻编码任务，在指定大小的基本类型的列表上工作也会变得很慢。
+    （3）如果你要使用多维数组，使用[][]比List
+
+
+3、ArrayList和HashMap默认大小?
+    ArrayList 的默认大小是 10 个元素，HashMap 的默认大小是16个元素（必须是2的幂）。
+
+4、如果两个键的hashcode相同，你如何获取值对象？
+
+  当我们调用get()方法，HashMap会使用键对象的hashcode找到bucket位置，然后会调用keys.equals()方法去找到链表中正确的节点，
+  最终找到要找的值对象。
+
+5、30.HashMap和Hashtable有什么区别？
+
+  1、HashMap是非线程安全的，HashTable是线程安全的。
+  2、HashMap的键和值都允许有null值存在，而HashTable则不行。
+  3、因为线程安全的问题，HashMap效率比HashTable的要高。
+  4、Hashtable是同步的，而HashMap不是。因此，HashMap更适合于单线程环境，而Hashtable适合于多线程环境。
+  一般现在不建议用HashTable, ①是HashTable是遗留类，内部实现很多没优化和冗余。②即使在多线程环境下，现在也有同步的
+  ConcurrentHashMap替代，没有必要因为是多线程而用HashTable。
+
+6、父类的静态方法能否被子类重写
+
+  不能。重写只适用于实例方法,不能用于静态方法，而子类当中含有和父类相同签名的静态方法，我们一般称之为隐藏。

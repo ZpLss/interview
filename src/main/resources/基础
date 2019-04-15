@@ -66,3 +66,28 @@
 15.java中IO流分为几种
 16.BIO、NIO、AIO的区别
 17.Files的常用方法
+
+18、String和StringBuffer
+
+    String和StringBuffer主要区别是性能：String是不可变对象，每次对String类型进行操作都等同于产生了一个新的String对象，
+    然后指向新的String对象。所以尽量不在对String进行大量的拼接操作，否则会产生很多临时对象，导致GC开始工作，影响系统性能。
+
+    StringBuffer是对对象本身操作，而不是产生新的对象，因此在有大量拼接的情况下，我们建议使用StringBuffer。
+    但是需要注意现在JVM会对String拼接做一定的优化：
+    String s=“This is only ”+”simple”+”test”会被虚拟机直接优化成String s=“This is only simple test”，
+    此时就不存在拼接过程
+
+    StringBuffer和StringBuilder
+
+    StringBuffer是线程安全的可变字符串，其内部实现是可变数组。StringBuilder是jdk 1.5新增的，其功能和StringBuffer类似，
+    但是非线程安全。因此，在没有多线程问题的前提下，使用StringBuilder会取得更好的性能。
+
+19、调用System.gc()会发生什么?
+
+    通知GC开始工作，但是GC真正开始的时间不确定。
+
+20、什么是值传递和引用传递？
+
+   值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量.
+   引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。
+   一般认为,java内的传递都是值传递. java中实例对象的传递是引用传递 。
