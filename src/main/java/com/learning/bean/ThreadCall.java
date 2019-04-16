@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.bean;
 
 import java.util.concurrent.Callable;
 
