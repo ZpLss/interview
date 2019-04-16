@@ -1,8 +1,11 @@
 1、springMVC处理请求流程
-    1. web应用服务器接收到一个新请求是，如果匹配DispatcherServlet的请求映射路径，web容器将该请求转发给DispatcherServlet进行处理
+    1. web应用服务器接收到一个新请求是，如果匹配DispatcherServlet的请求映射路径，web容器将该请求转发给DispatcherServlet
+    进行处理
     2. DispatcherServlet接收到请求后，将根据请求的信息及HandlerMapping的配置找到处理请求的处理器（Handler）
-    3. 当DispatcherServlet根据HandlerMapping得到对应当前请求的Handler后，通过HandlerAdapter对Handler进行封装，以统一的适配器接口调用Handler
+    3. 当DispatcherServlet根据HandlerMapping得到对应当前请求的Handler后，通过HandlerAdapter对Handler进行封装，
+    以统一的适配器接口调用Handler
     4. 处理器完成业务逻辑的处理后将返回一个ModelAndView给DispatcherServlet，ModelAndView包含了视图逻辑名和模型数据信息
-    5. ModelAndView中包含的是“逻辑视图名”，而非真正的视图对象，DispatcherServlet借助ViewResolver完成逻辑视图名到真实视图名对象的解析工作
+    5. ModelAndView中包含的是“逻辑视图名”，而非真正的视图对象，DispatcherServlet借助ViewResolver完成逻辑视图名到真实
+    视图名对象的解析工作
     6. 当得到真实的视图对象View后，DispatcherServlet就使用这个View对象对ModelAndView中的模型数据进行视图渲染
     7. 最终客户端得到的可能是HTML页面或者其他对象
