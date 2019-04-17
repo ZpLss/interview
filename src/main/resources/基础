@@ -172,8 +172,9 @@
 
     StringBuffer和StringBuilder
 
-    StringBuffer是线程安全的可变字符串，其内部实现是可变数组。StringBuilder是jdk 1.5新增的，其功能和StringBuffer类似，
-    但是非线程安全。因此，在没有多线程问题的前提下，使用StringBuilder会取得更好的性能。
+    StringBuffer是线程安全的可变字符串，其内部实现是可变数组。
+    StringBuilder是jdk 1.5新增的，其功能和StringBuffer类似，但是非线程安全。
+    因此，在没有多线程问题的前提下，使用StringBuilder会取得更好的性能。
 
 19、调用System.gc()会发生什么?
 
@@ -185,5 +186,11 @@
    引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。
    一般认为,java内的传递都是值传递. java中实例对象的传递是引用传递 。
 
+21、sleep() 和 wait() 的区别
 
+    wait()是Object类的方法，当一个线程执行到wait方法时，它就进入到一个和该对象相关的等待池，同时释放对象的机锁，
+    使得其他线程能够访问，可以通过notify，notifyAll方法来唤醒等待的线程
 
+    sleep() 方法是线程类（Thread）的静态方法，让调用线程进入睡眠状态，让出执行机会给其他线程，等到休眠时间结束后，
+    线程进入就绪状态和其他线程一起竞争cpu的执行时间。因为sleep() 是static静态的方法，他不能改变对象的机锁，当一个
+    synchronized块中调用了sleep() 方法，线程虽然进入休眠，但是对象的机锁没有被释放，其他线程依然无法访问这个对象。

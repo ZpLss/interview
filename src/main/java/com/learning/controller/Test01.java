@@ -25,7 +25,16 @@ public class Test01 {
         System.out.println(i);
         System.out.println(j);
 
+        System.out.println(reSum(1));
+        System.out.println(reSum(6));
+    }
 
+    public static Integer reSum(int n){
+        //递归算法，自己调自己
+        if (n == 1 || n==0){
+            return n;
+        }
 
+        return reSum(n-1) + reSum(n-2);
     }
 }
