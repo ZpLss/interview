@@ -48,3 +48,28 @@
 8、什么是不可变对象
 
   不可变对象指对象一旦被创建，状态就不能再改变。任何修改都会创建一个新的对象，如 String、Integer及其它包装类。
+
+9、内存泄漏与内存溢出
+    内存泄漏：Memory Leak是指程序在申请内存后，无法释放已申请的内存空间，存在无效的引用！
+    1) 内存泄露是导致内存溢出的原因之一，内存泄露积累起来将导致内存溢出。2) 内存泄露可以通过完善代码来避免，
+    内存溢出可以通过调整配置来减少发生频率，但无法彻底避免。
+
+    Java的内存泄露多半是因为对象存在无效的引用，对象得不到释放，如果发现Java应用程序占用的内存出现了泄露的迹象，
+    那么我们一般采用下面的步骤分析：
+    1. 用工具生成java应用程序的heap dump（如jmap）
+    2. 使用Java heap分析工具（如MAT），找出内存占用超出预期的嫌疑对象
+    3. 根据情况，分析嫌疑对象和其他对象的引用关系。
+    4. 分析程序的源代码，找出嫌疑对象数量过多的原因。
+10、JVM常用参数
+    -Xms 	最小堆大小
+    -Xmx 	最大堆大小
+    -Xmn 	新生代大小
+    -XX:PermSize 	永久代大小
+    -XX:MaxPermSize 	永久代最大大小
+    -XX:+PrintGC 	输出GC日志
+    -verbose:gc 	-
+    -XX:+PrintGCDetails 	输出GC的详细日志
+    -XX:+PrintGCTimeStamps 	输出GC时间戳(以基准时间的形式)
+    -XX:+PrintHeapAtGC 	在进行GC的前后打印出堆的信息
+    -Xloggc:/path/gc.log 	日志文件的输出路径
+    -XX:+PrintGCApplicationStoppedTime 	打印由GC产生的停顿时间
