@@ -9,3 +9,20 @@
     视图名对象的解析工作
     6. 当得到真实的视图对象View后，DispatcherServlet就使用这个View对象对ModelAndView中的模型数据进行视图渲染
     7. 最终客户端得到的可能是HTML页面或者其他对象
+
+
+    总结：
+
+    1. Spring 框架就像一个家族，有众多衍生产品例如 boot、security、jpa等等。
+    但他们的基础都是Spring的ioc、aop等. ioc 提供了依赖注入的容器， aop解决了面向横切面编程，
+    然后在此两者的基础上实现了其他延伸产品的高级功能；
+
+    2. springMvc是基于Servlet 的一个MVC框架主要解决WEB开发的问题，因为Spring的配置非常复杂，
+    各种XML、JavaConfig、servlet处理起来比较繁琐；
+
+    3. 为了简化开发者的使用，从而创造性地推出了springBoot框架，默认优于配置，简化了springMvc的配置流程；
+    但区别于springMvc的是，springBoot专注于微服务方面的接口开发，和前端解耦，
+    虽然springBoot也可以做成springMvc前后台一起开发，但是这就有点不符合springBoot框架的初衷了；
+
+    4. 对于springCloud框架来说，它和springBoot一样，注重的是微服务的开发，但是springCloud更关注的是
+    全局微服务的整合和管理，相当于管理多个springBoot框架的单体微服务；

@@ -23,7 +23,7 @@
   当我们调用get()方法，HashMap会使用键对象的hashcode找到bucket位置，然后会调用keys.equals()方法去找到链表中正确的节点，
   最终找到要找的值对象。
 
-5、30.HashMap和Hashtable有什么区别？
+5、HashMap和Hashtable有什么区别？
 
   1、HashMap是非线程安全的，HashTable是线程安全的。
   2、HashMap的键和值都允许有null值存在，而HashTable则不行。
