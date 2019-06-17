@@ -1,7 +1,10 @@
 package com.learning.controller;
 
-import com.learning.bean.ThreadCall;
 import com.learning.bean.Worker;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * ClassName:Test01
@@ -12,6 +15,11 @@ import com.learning.bean.Worker;
  */
 public class Test01 {
     public static void main(String[] args) throws Exception {
+
+        System.out.println(new Integer[129] == new Integer[129]);
+        System.out.println(Integer.valueOf(127) == Integer.valueOf(127));
+
+
         Worker worker1 = new Worker("hah","15");
         Worker worker2 = worker1;
         System.out.println(worker1);
@@ -27,6 +35,10 @@ public class Test01 {
 
         System.out.println(reSum(1));
         System.out.println(reSum(6));
+
+        Lock lock = new ReentrantLock();
+        Condition condition = lock.newCondition();
+
     }
 
     public static Integer reSum(int n){
