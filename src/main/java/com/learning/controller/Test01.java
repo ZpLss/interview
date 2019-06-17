@@ -25,8 +25,9 @@ public class Test01 {
         Worker worker2 = worker1;
         System.out.println(worker1);
         worker2.setName("heihei");
+
         System.out.println(worker1);
-        
+
         System.out.println(worker2);
 
 
