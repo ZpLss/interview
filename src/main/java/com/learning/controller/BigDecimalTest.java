@@ -16,8 +16,6 @@ public class BigDecimalTest {
         BigDecimal divide2 =b1.divide(b2,1,BigDecimal.ROUND_UP);
         System.out.println(divide);
         System.out.println(divide2);
-
-
     }
 
 

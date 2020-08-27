@@ -18,9 +18,21 @@ public class Test1 {
         Integer num4 = 128;
         System.out.println(num3 == num4);//false
         System.out.println(num3.equals(num4));//true
+    }
 
-
+    public void sentNotice(String msg) {
+        System.out.println(msg);
 
     }
 
+    public String sent(String msg){
+        return msg;
+    }
+
+    public Integer add (int a, int b){
+        return a+b;
+    }
+    public String append(String a, String b){
+        return a+b;
+    }
 }
