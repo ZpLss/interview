@@ -1,0 +1,5 @@
+springsession原理:
+
+    就是当Web服务器接收到http请求后，当请求进入对应的Filter进行过滤，将原本需要由web服务器创建会话的过程转交给
+Spring-Session进行创建，本来创建的会话保存在Web服务器内存中，通过Spring-Session创建的会话信息可以保存第三方的服务中，
+如：redis,mysql等。Web服务器之间通过连接第三方服务来共享数据，实现Session共享！
