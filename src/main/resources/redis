@@ -1,0 +1,6 @@
+Redis是内存数据库，数据保存在内存中，访问速度快。MySQL是关系型数据库，功能强大，存储在磁盘中，数据访问速度慢。
+
+redis存储的数据类型：
+Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。
+
+string字符串  hash哈希  list列表  set集合  zset有序集合

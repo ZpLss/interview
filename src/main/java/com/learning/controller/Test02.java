@@ -30,36 +30,28 @@ public class Test02 {
 
     public static void main(String[] args) {
 
-        int a = 200;
-        Integer b = new Integer(200);
-        System.out.println(a==b); //true
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    for (int i = 1;i <= 59;i++){
+                        System.out.println(i + ",");
+                        if (i == 59){
+                            try {
+                                Thread.sleep(1000);
+                                i = 1;
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+        });
 
-        Test02 t2 = new Test02();
-        System.out.println("in main()!");
-//        try {
-//            throw new Bexception("b");
-//        }catch (Aexception aexception){
-//            System.out.println(aexception);
-//        }catch (Exception e){
-//            System.out.println(e);
-//        }
-        String s = "abc";
-        StringBuilder stringBuilder = new StringBuilder("abc");
-        stringBuilder.append("HelloWorld");
-        System.out.println(stringBuilder);
+        thread.start();
 
-        StringBuffer stringBuffer = new StringBuffer("haha");
-        stringBuffer.append("Hello StringBuffer!");
-
-        System.out.println(stringBuffer);
-        //清空stringbuffer
-//        stringBuffer.delete(0,stringBuffer.length());
-//        System.out.println("清空后：" + stringBuffer);
-
-//        stringBuffer = new StringBuffer();
-
-        stringBuffer.setLength(0);
-        System.out.println("清空后：" + stringBuffer);
+        ThreadLocal threadLocal = new ThreadLocal();
 
 
     }
