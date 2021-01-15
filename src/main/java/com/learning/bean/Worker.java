@@ -8,6 +8,7 @@ package com.learning.bean;
 public class Worker {
     private String name;
     private String age;
+    private String[] strings = new String[100];
 
     public Worker(){}
     public Worker(String name, String age) {
